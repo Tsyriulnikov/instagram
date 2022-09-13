@@ -2,3 +2,9 @@
 <h2 class="name">name:{{user.name}}</h2>
 <button [disabled]="isAppLoading" >Нажми меня</button>
 <button (click)="changeTitleHandler()">Change Title</button>
+<input type="text" (input)="changeTextHandler($event)"/>
+<h1>{{text}}</h1>
+<input type="text" [value]="textKeyUp" (keyup.enter)="changeTextHandlerKeyUp($event)" placeholder="input word and press Enter"/>
+<input type="text" [(ngModel)]="text"/>
+<h1>{{textKeyUp}}</h1>
+<inst-parent></inst-parent>

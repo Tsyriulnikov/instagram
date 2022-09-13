@@ -18,15 +18,26 @@ export class AppComponent {
         name: 'Chuka'
     }
     isAppLoading = true
-    changeTitleHandler () {
-        this.title='Title Changed'
+    text = ''
+    textKeyUp = ''
+
+
+    changeTitleHandler() {
+        this.title = 'Title Changed'
     };
 
     constructor() {
         setTimeout(() => {
             this.isAppLoading = false
-        },3000)
+        }, 3000)
     }
 
 
+    changeTextHandler($event: Event) {
+        this.text = ($event.currentTarget as HTMLInputElement).value
+    }
+
+    changeTextHandlerKeyUp($event: Event) {
+        this.textKeyUp = ($event.currentTarget as HTMLInputElement).value
+    }
 }
