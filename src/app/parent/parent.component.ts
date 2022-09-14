@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Grade} from "./child/child.component";
 
 export interface Address {
     city: string
@@ -20,6 +21,10 @@ export class ParentComponent implements OnInit {
         street: 'Gogol',
         house: '168'
     }
+    math ?: number
+    liter ?: number
+    phisic ?: number
+    inputGrades: Array<string> = []
 
     constructor() {
     }
@@ -27,4 +32,16 @@ export class ParentComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    getGrade(value: number) {
+        this.math = value
+    }
+
+    getObjectGrade(value: Grade) {
+        this.liter = value.liter
+        this.phisic = value.phisic
+    }
+
+    getInputGrade(grade: string) {
+        this.inputGrades.push(grade)
+    }
 }

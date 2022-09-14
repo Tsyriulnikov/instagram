@@ -1,5 +1,14 @@
 <div>
     <p>parent works!</p>
-    <inst-child [surnameProps]="surname" [addressCity]="address"></inst-child>
+    <inst-child [surnameProps]="surname" [addressCity]="address" (sendGradeEvent)="getGrade($event)"
+                (sendObjectGradeEvent)="getObjectGrade($event)" (sendInputGradeEvent)="getInputGrade($event)"
+    ></inst-child>
+    <h1>Grade Child: {{math}}</h1>
+    <h2>Liter:{{liter}}</h2>
+    <h2>Phisic:{{phisic}}</h2>
+    <!--    <h1>Input child grade: {{inputGrades | json}}  </h1>-->
+    <div *ngFor="let grade of inputGrades">
+        <h1>Input child grade: {{inputGrades}}  </h1>
+    </div>
 </div>
 
