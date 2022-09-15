@@ -7,10 +7,11 @@ import {FormsModule} from "@angular/forms";
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
 import { Issue1Component } from './issue1/issue1.component';
+import { ServiceTestComponent } from './service-test/service-test.component';
 
 
 @NgModule({
-  declarations: [AppComponent, ParentComponent, ChildComponent, Issue1Component],
+  declarations: [AppComponent, ParentComponent, ChildComponent, Issue1Component, ServiceTestComponent],
     imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
