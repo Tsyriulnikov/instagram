@@ -8,11 +8,13 @@ import {ValueService} from "../services/value.service";
 // providers:[ValueService]
 })
 export class ServiceTestComponent implements OnInit {
+    value = 0
 
     constructor(private valueService: ValueService) {
     }
 
     ngOnInit(): void {
+        this.value = this.valueService.value
     }
 
 }
