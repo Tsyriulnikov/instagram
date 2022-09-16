@@ -8,11 +8,13 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
 import { Issue1Component } from './issue1/issue1.component';
 import { ServiceTestComponent } from './service-test/service-test.component';
+import { TodosComponent } from './todos/todos.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
-  declarations: [AppComponent, ParentComponent, ChildComponent, Issue1Component, ServiceTestComponent],
-    imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [AppComponent, ParentComponent, ChildComponent, Issue1Component, ServiceTestComponent, TodosComponent    ],
+    imports: [BrowserModule, AppRoutingModule, FormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
