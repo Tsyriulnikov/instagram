@@ -15,6 +15,12 @@ interface Todo {
 })
 export class TodosComponent implements OnInit {
     todos: Todo[] = []
+    httpOptions = {
+        withCredentials: true,
+        headers: {
+            'api-key': 'fe698d58-4d10-4f41-a217-bc0f632c98e5'
+        }
+    }
 
     constructor(private http: HttpClient) {
     }
@@ -24,15 +30,17 @@ export class TodosComponent implements OnInit {
     }
 
     getTodos() {
-        this.http.get<Todo[]>('https://social-network.samuraijs.com/api/1.1/todo-lists', {
-            withCredentials: true,
-            headers: {
-                'api-key': 'fe698d58-4d10-4f41-a217-bc0f632c98e5'
-            },
-        })
+        this.http.get<Todo[]>('https://social-network.samuraijs.com/api/1.1/todo-lists', this.httpOptions)
             .subscribe((res) => {
                 this.todos = res
             })
+    }
+
+    createTodo() {
+this.http.post()
+    }
+
+    deleteTodo() {
 
     }
 }
