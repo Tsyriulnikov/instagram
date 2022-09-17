@@ -8,6 +8,15 @@ interface Todo {
     title: string
 }
 
+interface CreateTodoResponse {
+    data: {
+        item: Todo
+    }
+    messages: string[]
+    fieldsErrors: string[]
+    resultCode: number
+}
+
 @Component({
     selector: 'inst-todos',
     templateUrl: './todos.component.html',
@@ -37,7 +46,13 @@ export class TodosComponent implements OnInit {
     }
 
     createTodo() {
-this.http.post()
+        const randomNamber = Math.floor(Math.random() * 100)
+        const title = 'Angular' + randomNamber
+        this.http.post<CreateTodoResponse>('https://social-network.samuraijs.com/api/1.1/todo-lists', {title}, this.httpOptions)
+            .subscribe(res => {
+            const newTodo=res.data.item
+                this.todos.unshift(newTodo)
+            })
     }
 
     deleteTodo() {
