@@ -1,6 +1,10 @@
-<p>todos works!</p>
+<h1 *ngIf="!!error; else content">{{error}}</h1>
+
+
+<ng-template #content>
 <div *ngFor="let todo of todos">
     {{todo.id}}--{{todo.title}}--{{todo.order}}
    </div>
 <button (click)="createTodo()" >Add Todolist</button>
 <button (click)="deleteTodo()" >Del Todolist</button>
+</ng-template>
