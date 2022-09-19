@@ -32,7 +32,9 @@ export class TodosService {
     constructor(private http: HttpClient) {
     }
 
-
+    getTodos(): Observable<Todo[]> {
+        return this.http.get<Todo[]>(`${environment.baseUrl}/todo-lists`, this.httpOptions)
+    }
 
     createTodo(title: string): Observable<BaseResponse<{ item: Todo }>> {
         return this.http.post<BaseResponse<{ item: Todo }>>(`${environment.baseUrl}/todo-lists`, {title}, this.httpOptions)
