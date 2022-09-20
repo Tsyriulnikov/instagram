@@ -35,7 +35,7 @@ export class TodosComponent implements OnInit, OnDestroy {
     }
 
     deleteTodo() {
-        const todoId = 'jnjnjnj'
+        const todoId = '8e7b52bd-4aa6-4a99-a617-a23797eaff93'
         this.todosService.deleteTodo(todoId)
     }
 }
