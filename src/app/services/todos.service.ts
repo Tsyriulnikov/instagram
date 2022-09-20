@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 
 export interface Todo {
@@ -22,6 +22,7 @@ export interface BaseResponse<T = {}> {
     providedIn: 'root'
 })
 export class TodosService {
+    todos$: BehaviorSubject<Todo[]> = new BehaviorSubject<Todo[]>([])
     httpOptions = {
         withCredentials: true,
         headers: {
@@ -32,8 +33,12 @@ export class TodosService {
     constructor(private http: HttpClient) {
     }
 
-    getTodos(): Observable<Todo[]> {
-        return this.http.get<Todo[]>(`${environment.baseUrl}/todo-lists`, this.httpOptions)
+    getTodos() {
+         this.http
+             .get<Todo[]>(`${environment.baseUrl}/todo-lists`, this.httpOptions)
+             .subscribe(todos=>{
+                 this.todos$.next(todos)
+             })
     }
 
     createTodo(title: string): Observable<BaseResponse<{ item: Todo }>> {
