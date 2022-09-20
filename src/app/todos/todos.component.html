@@ -2,7 +2,7 @@
 
 
 <ng-template #content>
-<div *ngFor="let todo of todos">
+<div *ngFor="let todo of todos$ | async">
     {{todo.id}}--{{todo.title}}--{{todo.order}}
    </div>
 <button (click)="createTodo()" >Add Todolist</button>

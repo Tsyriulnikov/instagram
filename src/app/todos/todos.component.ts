@@ -1,7 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Todo, TodosService} from "../services/todos.service";
-import {HttpErrorResponse} from "@angular/common/http";
-import {Observable, Subscription} from "rxjs";
+import {map, Observable, Subscription} from "rxjs";
 
 @Component({
     selector: 'inst-todos',
@@ -9,7 +8,7 @@ import {Observable, Subscription} from "rxjs";
     styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit, OnDestroy {
-    todos$!:Observable<Todo[]>
+    todos$!: Observable<Todo[]>
     error = ''
 
     constructor(private todosService: TodosService) {
@@ -25,37 +24,18 @@ export class TodosComponent implements OnInit, OnDestroy {
     }
 
     getTodos() {
-    this.todosService.getTodos()
+        this.todosService.getTodos()
     }
 
 
     createTodo() {
-    //     const randomNamber = Math.floor(Math.random() * 100)
-    //     const title = 'Angular' + randomNamber
-    //     this.subscriptions.add(this.todosService.createTodo(title).subscribe({
-    //             next: (res) => {
-    //                 const newTodo = res.data.item
-    //                 this.todos.unshift(newTodo)
-    //             },
-    //             error: (error: HttpErrorResponse) => {
-    //                 this.error = error.message
-    //             },
-    //         })
-    //     )
+        const randomNamber = Math.floor(Math.random() * 100)
+        const title = 'Angular' + randomNamber
+        this.todosService.createTodo(title)
     }
 
     deleteTodo() {
-        const todoId = this.todos[0].id
-        this.subscriptions.add(this.todosService.deleteTodo(todoId).subscribe({
-                next: () => {
-                    this.todos = this.todos.filter(tl => tl.id !== todoId)
-                },
-                error: (error: HttpErrorResponse) => {
-                    this.error = error.message
-                }
-            })
-        )
+        const todoId = 'jnjnjnj'
+        this.todosService.deleteTodo(todoId)
     }
-
-
 }
