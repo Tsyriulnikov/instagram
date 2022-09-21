@@ -33,6 +33,10 @@ export class TodosService {
     constructor(private http: HttpClient) {
     }
 
+    private errorHandler(err: HttpErrorResponse) {
+        console.log(err.message + '  Error')
+        return EMPTY
+    }
 
     getTodos() {
         this.http
