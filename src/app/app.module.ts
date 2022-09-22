@@ -10,10 +10,11 @@ import { Issue1Component } from './issue1/issue1.component';
 import { ServiceTestComponent } from './service-test/service-test.component';
 import { TodosComponent } from './todos/todos.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ObservableTestComponent } from './observable-test/observable-test.component';
 
 
 @NgModule({
-  declarations: [AppComponent, ParentComponent, ChildComponent, Issue1Component, ServiceTestComponent, TodosComponent    ],
+  declarations: [AppComponent, ParentComponent, ChildComponent, Issue1Component, ServiceTestComponent, TodosComponent, ObservableTestComponent    ],
     imports: [BrowserModule, AppRoutingModule, FormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
