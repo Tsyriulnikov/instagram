@@ -30,7 +30,9 @@ export class TodosComponent implements OnInit, OnDestroy {
 
 
     createTodo() {
-
+        const randomNamber = Math.floor(Math.random() * 100)
+        const title = 'Angular' + randomNamber
+        this.todosService.createTodo(title)
     }
 
     deleteTodo() {
