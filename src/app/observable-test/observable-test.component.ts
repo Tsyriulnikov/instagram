@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {fromEvent, interval, map, Observable, of} from "rxjs";
-import {Todo} from "../services/todos.service";
+
 
 @Component({
     selector: 'inst-observable-test',
@@ -19,7 +19,11 @@ export class ObservableTestComponent implements OnInit {
         error: (error: any) => console.error(error), //
         complete: () => console.log("completed") // completed
     };
-
+    observer2 = {
+        next: (value: any) => console.log(value), // 1, 2
+        error: (error: any) => console.error(error), //
+        complete: () => console.log("completed") // completed
+    };
     // timer = new Observable(observer => {
     //   // объявляем счетчик
     //   let counter = 0;
@@ -41,6 +45,7 @@ export class ObservableTestComponent implements OnInit {
 
     ngOnInit(): void {
         this.observable.subscribe(this.observer);
+        this.observable.subscribe(this.observer2);
 
         const subscription = this.timer.subscribe({next: console.log});
 // поток завершится через 5 секунд
