@@ -23,13 +23,7 @@ import {RouterModule} from "@angular/router";
 @NgModule({
   declarations: [AppComponent, ParentComponent, ChildComponent, Issue1Component, ServiceTestComponent, TodosComponent, ObservableTestComponent,LoginComponent, NavigationComponent, HomeComponent, UsersComponent, ProfileComponent, PageNotFoundComponent    ],
     imports: [BrowserModule, AppRoutingModule, FormsModule,HttpClientModule,ReactiveFormsModule,
-      RouterModule.forRoot([
-        {path:'',component:HomeComponent},
-        {path:'login', component:LoginComponent},
-        {path:'profile', component:ProfileComponent},
-        {path:'todos', component:TodosComponent},
-        {path:'users', component:UsersComponent},
-      ])
+     AppRoutingModule
     ],
   providers: [],
   bootstrap: [AppComponent],
