@@ -1,2 +1,10 @@
 <p>navigation</p>
-home - login - todos - users - profile - page-not-found
+<!--home - login - todos - users - profile - page-not-found-->
+<nav>
+    <a class="button" routerLink="/" routerLinkActive="activebutton" [routerLinkActiveOptions]="{exact:true}">Home</a>
+    <a class="button" routerLink="/login" routerLinkActive="activebutton">Login</a>
+    <a class="button" routerLink="/todos" routerLinkActive="activebutton">todos</a>
+    <a class="button" routerLink="/users" routerLinkActive="activebutton">Users</a>
+    <a class="button" routerLink="/profile" routerLinkActive="activebutton">Profile</a>
+</nav>
+<br>

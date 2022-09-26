@@ -22,9 +22,7 @@ import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [AppComponent, ParentComponent, ChildComponent, Issue1Component, ServiceTestComponent, TodosComponent, ObservableTestComponent,LoginComponent, NavigationComponent, HomeComponent, UsersComponent, ProfileComponent, PageNotFoundComponent    ],
-    imports: [BrowserModule, AppRoutingModule, FormsModule,HttpClientModule,ReactiveFormsModule,
-     AppRoutingModule
-    ],
+    imports: [BrowserModule, AppRoutingModule, FormsModule,HttpClientModule,ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
